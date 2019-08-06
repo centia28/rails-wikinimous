@@ -1,0 +1,17 @@
+<article>
+  <h1>
+    <%= @article.title %>
+    <small>
+      <%= link_to(edit_article_path(@article)) do %>
+        <i class="fa fa-pencil"></i>
+      <% end %>
+      <%= link_to(article_path(@article), method: :delete, data: { confirm: "Are you sure?" }) do %>
+        <i class="fa fa-trash-o"></i>
+      <% end %>
+    </small>
+    <hr>
+  </h1>
+  <div>
+    <%= @content.html_safe %>
+  </div>
+</article>
